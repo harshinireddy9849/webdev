@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,13 +19,13 @@
 
         <div class="logo-container">
 
-    <img src="./rcb-logo.png"
-         alt="RCB Logo"
-         class="rcb-logo">
+            <img src="./rcb-logo.png"
+                 alt="RCB Logo"
+                 class="rcb-logo">
 
-    <h1>IPL BOOKING</h1>
+            <h1>IPL BOOKING</h1>
 
-</div>
+        </div>
 
         <nav>
             <ul>
@@ -259,6 +260,7 @@
                                id="tickets"
                                name="tickets"
                                min="1"
+                               value="1"
                                required>
 
 
@@ -299,15 +301,30 @@
 
                     <h3>Booking Summary</h3>
 
-                    <p>Selected Match: CSK vs MI</p>
+                    <p>
+                        Selected Match:
+                        <span id="summary-match">Not Selected</span>
+                    </p>
 
-                    <p>Stand: Premium</p>
+                    <p>
+                        Stand:
+                        <span id="summary-stand">General</span>
+                    </p>
 
-                    <p>Ticket Price: 2500</p>
+                    <p>
+                        Ticket Price:
+                        ₹<span id="summary-price">0</span>
+                    </p>
 
-                    <p>Quantity: 2</p>
+                    <p>
+                        Quantity:
+                        <span id="summary-quantity">1</span>
+                    </p>
 
-                    <p>Total Amount: 5000</p>
+                    <p>
+                        Total Amount:
+                        ₹<span id="summary-total">0</span>
+                    </p>
 
                 </div>
 
@@ -417,6 +434,11 @@
         </p>
 
     </footer>
+
+
+    <!-- JAVASCRIPT FILE -->
+
+    <script src="app.js"></script>
 
 </body>
 
