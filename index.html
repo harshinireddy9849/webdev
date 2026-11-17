@@ -27,13 +27,27 @@
 
         </div>
 
-        <nav>
+        <!-- HAMBURGER MENU BUTTON -->
+
+        <button type="button"
+                class="menu-toggle"
+                id="menu-toggle"
+                aria-label="Toggle navigation"
+                aria-expanded="false">
+            ☰
+        </button>
+
+        <!-- NAVIGATION LINKS -->
+
+        <nav id="navbar">
+
             <ul>
                 <li><a href="#matches">Matches</a></li>
                 <li><a href="#booking">Book Ticket</a></li>
                 <li><a href="#my-bookings">My Bookings</a></li>
                 <li><a href="#guidelines">Guidelines</a></li>
             </ul>
+
         </nav>
 
     </header>
@@ -100,7 +114,9 @@
 
             <h2>Match Schedule</h2>
 
-            <label for="team">Filter:</label>
+            <!-- TEAM FILTER -->
+
+            <label for="team">Filter by Team:</label>
 
             <select id="team" name="team">
 
@@ -114,100 +130,123 @@
             </select>
 
 
-            <!-- RESPONSIVE MATCH TABLE -->
+            <!-- GRID AND LIST VIEW BUTTONS -->
 
-            <div class="table-container">
+            <div class="view-buttons">
 
-                <table>
+                <button type="button" id="grid-view">
+                    Grid View
+                </button>
 
-                    <thead>
+                <button type="button" id="list-view">
+                    List View
+                </button>
 
-                        <tr>
-                            <th rowspan="2">Match Number</th>
-                            <th rowspan="2">Teams</th>
-                            <th rowspan="2">Date & Time</th>
-                            <th rowspan="2">Venue</th>
-                            <th colspan="3">Ticket Prices</th>
-                            <th rowspan="2">Book</th>
-                        </tr>
+            </div>
 
-                        <tr>
-                            <th>General</th>
-                            <th>Premium</th>
-                            <th>VIP</th>
-                        </tr>
 
-                    </thead>
+            <!-- MATCH CARDS -->
 
-                    <tbody>
+            <div class="match-container" id="match-container">
 
-                        <tr>
-                            <td>01</td>
-                            <td>CSK vs MI</td>
-                            <td>10 Apr 7:30 PM</td>
-                            <td>Chennai</td>
-                            <td>1200</td>
-                            <td>2500</td>
-                            <td>5000</td>
+                <!-- MATCH 1 -->
 
-                            <td>
-                                <a href="#booking">
-                                    <button type="button">Book</button>
-                                </a>
-                            </td>
-                        </tr>
+                <div class="match-card" data-teams="csk mi">
 
-                        <tr>
-                            <td>02</td>
-                            <td>RCB vs MI</td>
-                            <td>14 Apr 7:30 PM</td>
-                            <td>Bengaluru</td>
-                            <td>1500</td>
-                            <td>3000</td>
-                            <td>6000</td>
+                    <h3>Match 01</h3>
 
-                            <td>
-                                <a href="#booking">
-                                    <button type="button">Book</button>
-                                </a>
-                            </td>
-                        </tr>
+                    <h4>CSK vs MI</h4>
 
-                        <tr>
-                            <td>03</td>
-                            <td>DC vs CSK</td>
-                            <td>18 Apr 7:30 PM</td>
-                            <td>Delhi</td>
-                            <td>1400</td>
-                            <td>3200</td>
-                            <td>6500</td>
+                    <p>Date: 10 Apr 7:30 PM</p>
 
-                            <td>
-                                <a href="#booking">
-                                    <button type="button">Book</button>
-                                </a>
-                            </td>
-                        </tr>
+                    <p>Venue: Chennai</p>
 
-                        <tr>
-                            <td>04</td>
-                            <td>RR vs RCB</td>
-                            <td>22 Apr 7:30 PM</td>
-                            <td>Hyderabad</td>
-                            <td>1800</td>
-                            <td>3500</td>
-                            <td>7000</td>
+                    <p>General: ₹1200</p>
 
-                            <td>
-                                <a href="#booking">
-                                    <button type="button">Book</button>
-                                </a>
-                            </td>
-                        </tr>
+                    <p>Premium: ₹2500</p>
 
-                    </tbody>
+                    <p>VIP: ₹5000</p>
 
-                </table>
+                    <a href="#booking">
+                        <button type="button">Book Ticket</button>
+                    </a>
+
+                </div>
+
+
+                <!-- MATCH 2 -->
+
+                <div class="match-card" data-teams="rcb mi">
+
+                    <h3>Match 02</h3>
+
+                    <h4>RCB vs MI</h4>
+
+                    <p>Date: 14 Apr 7:30 PM</p>
+
+                    <p>Venue: Bengaluru</p>
+
+                    <p>General: ₹1500</p>
+
+                    <p>Premium: ₹3000</p>
+
+                    <p>VIP: ₹6000</p>
+
+                    <a href="#booking">
+                        <button type="button">Book Ticket</button>
+                    </a>
+
+                </div>
+
+
+                <!-- MATCH 3 -->
+
+                <div class="match-card" data-teams="dc csk">
+
+                    <h3>Match 03</h3>
+
+                    <h4>DC vs CSK</h4>
+
+                    <p>Date: 18 Apr 7:30 PM</p>
+
+                    <p>Venue: Delhi</p>
+
+                    <p>General: ₹1400</p>
+
+                    <p>Premium: ₹3200</p>
+
+                    <p>VIP: ₹6500</p>
+
+                    <a href="#booking">
+                        <button type="button">Book Ticket</button>
+                    </a>
+
+                </div>
+
+
+                <!-- MATCH 4 -->
+
+                <div class="match-card" data-teams="rr rcb">
+
+                    <h3>Match 04</h3>
+
+                    <h4>RR vs RCB</h4>
+
+                    <p>Date: 22 Apr 7:30 PM</p>
+
+                    <p>Venue: Hyderabad</p>
+
+                    <p>General: ₹1800</p>
+
+                    <p>Premium: ₹3500</p>
+
+                    <p>VIP: ₹7000</p>
+
+                    <a href="#booking">
+                        <button type="button">Book Ticket</button>
+                    </a>
+
+                </div>
 
             </div>
 

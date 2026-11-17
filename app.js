@@ -186,3 +186,107 @@ ticketInput.addEventListener("input", function() {
 // Initialise Booking Summary when page loads
 
 updateBookingSummary();
+
+// ==========================================
+// ACTIVITY 8: TEAM FILTERING
+// ==========================================
+
+const teamFilter = document.getElementById("team");
+
+const matchCards = document.querySelectorAll(".match-card");
+
+const matchContainer = document.getElementById("match-container");
+
+
+// Filter Match Cards Based on Selected Team
+
+teamFilter.addEventListener("change", function() {
+
+    const selectedTeam = teamFilter.value;
+
+    matchCards.forEach(card => {
+
+        const teams = card.dataset.teams.split(" ");
+
+        if (selectedTeam === "all" || teams.includes(selectedTeam)) {
+
+            card.style.display = "";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+    showToast("Match filter updated!");
+
+});
+
+
+// ==========================================
+// GRID AND LIST VIEW TOGGLE
+// ==========================================
+
+// Grid View Button
+
+document.getElementById("grid-view").addEventListener("click", function() {
+
+    matchContainer.classList.remove("list-view");
+
+    showToast("Grid View Enabled!");
+
+});
+
+
+// List View Button
+
+document.getElementById("list-view").addEventListener("click", function() {
+
+    matchContainer.classList.add("list-view");
+
+    showToast("List View Enabled!");
+
+});
+
+// ==========================================
+// ACTIVITY 8: HAMBURGER MENU
+// ==========================================
+
+const menuToggle = document.getElementById("menu-toggle");
+
+const navbar = document.getElementById("navbar");
+
+menuToggle.addEventListener("click", function() {
+
+    navbar.classList.toggle("active");
+
+    // Update menu accessibility state
+    const isOpen = navbar.classList.contains("active");
+
+    menuToggle.setAttribute("aria-expanded", isOpen);
+
+    // Change hamburger icon
+    menuToggle.textContent = isOpen ? "✕" : "☰";
+
+});
+
+
+// Close menu after clicking a navigation link
+
+const navLinks = navbar.querySelectorAll("a");
+
+navLinks.forEach(link => {
+
+    link.addEventListener("click", function() {
+
+        navbar.classList.remove("active");
+
+        menuToggle.textContent = "☰";
+
+        menuToggle.setAttribute("aria-expanded", "false");
+
+    });
+
+});
